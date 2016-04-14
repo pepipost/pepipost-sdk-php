@@ -93,8 +93,8 @@ $data = array(
         'ACCOUNT_BAL'   => array('100','200'),
     ),    
     'files' => array(
-        'example_attachment1.txt' => 'This is a test content of the attach text file 1',
-        'example_attachment2.txt' => 'This is a test content of the attach text file 2',
+        'example_attachment1.txt' => base64_encode(trim(file_get_contents('/path/to/file.txt'))),
+        'example_attachment2.pdf' => base64_encode(trim(file_get_contents('/path/to/file.pdf'))),
     ),  
 );
 
