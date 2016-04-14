@@ -17,7 +17,7 @@ curl -sS https://getcomposer.org/installer | php
 ```
 **Run Composer**
 ```
-php composer.phar require pepipost/pepipost-sdk-php:v1.0.1
+php composer.phar require pepipost/pepipost-sdk-php:v1.0.0
 ```
 
 USAGE
