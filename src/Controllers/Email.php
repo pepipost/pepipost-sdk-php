@@ -99,6 +99,14 @@ class Email {
     }
         
     /**
+     * pseudo functino for sendJson – This function is use to send email.
+     * @param  Emailv1     $data     Required parameter: Data in JSON format
+     * @return mixed response from the API call*/
+    public function send ($data){
+        return $this->sendJson($data);
+    }
+
+    /**
      * `Sending Mails` – This API is used for sending emails. Pepipost supports REST as well JSON formats for the input. This is JSON API.
      * @param  Emailv1     $data     Required parameter: Data in JSON format
      * @return mixed response from the API call*/
