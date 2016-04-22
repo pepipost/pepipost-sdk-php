@@ -77,9 +77,9 @@ $data = array(
         'subject'       =>  'Hi [% NAME %], here is your account balance.',
         'content'       =>  '<p>Hi [%NAME%],</p><p>Your account balance is [% ACCOUNT_BAL %].</p>',
         'fromname'      =>  'SDK Sender Name ',
-        'tags'          =>  'AccountDeactivation, Verification',
         'replytoid'     =>  'replyto@example.com',
     ),
+    'tags'          =>  'AccountDeactivation, Verification',
     'X-APIHEADER' => array('UserID1','UserID2'),
     'settings' => array(
         'footer'        =>  true,
