@@ -1,34 +1,32 @@
 {
-    "name": "pepipost/pepipost-sdk-php",
+    "name": "apimatic/pepipostapi",
     "type": "library",
-    "description": "Pepipost API documentation",
-    "keywords": ["Pepipost API v1.0","API","SDK"],
-    "homepage": "https://docs.pepipost.com/",
+    "description": "Pepipost is a cloud-based SMTP relay service that delivers highly personalised transactional emails to the inbox within seconds of your customer’s transaction",
+    "keywords": ["Pepipost API","API","SDK"],
+    "homepage": "https://apimatic.io",
     "license": "MIT",
     "authors": [
         {
-            "name": "Tabby @ Pepipost.",
-            "email": "tabrez@pepipost.com",
-            "homepage": "https://github.com/Pepipost",
-            "role": "Co-Founder/Developer."
+            "name": "APIMatic SDK Generator",
+            "email": "support@apimatic.io",
+            "homepage": "https://apimatic.io",
+            "role": "API Tool"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/apimatic/unirest-php"
-        }
-    ],
-    "minimum-stability" : "dev",
     "require": {
+        "php": ">=5.4.0",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "itabrezshaikh/unirest-php": "2.0"
+        "mashape/unirest-php": "~3.0.1",
+        "apimatic/jsonmapper": "~1.3.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.7"
     },
     "autoload": {
         "psr-4": {
-            "PepipostAPIV10Lib\\": "src/"
+            "PepipostAPILib\\": "src/"
         }
     }
 }
