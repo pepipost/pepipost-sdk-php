@@ -79,9 +79,8 @@ Developers already familar with GIT, Composer and some of the other handy tools 
   
  8. Get your API key and Sending Domain from your Pepipost account. 
   
-  * **```apikey```** will be available under **```Login to Pepipost -> Settings -> Integration```**
-  
-  * **```Sending Domain```** will be available under **```Login to Pepiost -> Settings -> Sending Domains ```**
+  * **apikey** will be available under Login to Pepipost -> Settings -> Integration  
+  * **Sending Domain** will be available under Login to Pepiost -> Settings -> Sending Domains 
 
 ```
   *Note :: Domains showing with Active status on Sending Domain dashboard are only allowed to send any sort of emails.* In case there are no Sending Domain added under your account, then first add the domain, get the DNS (SPF/DKIM) settings done and get it reviewed by our compliance team for approval. Once the domain is approved, it will be in ACTIVE status and will be ready to send any sort of emails. 
@@ -91,7 +90,9 @@ Developers already familar with GIT, Composer and some of the other handy tools 
  
  Change your **```$apiKey = 'api-XX-key-XX-here'```** to **```$apiKey = 'api-key-of-your-pepipost-account';```**
  
- Similarly, update your Sending Domain from **```$body->from->fromEmail = 'admin@myfirsttest.com';```** to **```$body->from->fromEmail = 'admin@your-active-domain-on-pepipost';```**
+ Similarly, update your Sending Domain from:
+ 
+ **```$body->from->fromEmail = 'admin@myfirsttest.com';```** to **```$body->from->fromEmail = 'admin@your-active-domain-on-pepipost';```**
 
 10. Update the rest of the email related payload like Recipent email address, content of the email etc. Below is the sample code with details of payload:
 
