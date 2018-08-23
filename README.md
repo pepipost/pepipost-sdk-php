@@ -53,7 +53,7 @@ Developers already familar with GIT, Composer and some of the other handy tools 
  
  2. Change directory to any new directory (Make directory test-- recommended).
  
- 3. [Download or Clone](https://github.com/pepipost/pepipost-sdk-php/archive/feature_x.zip) the Pepipost Repository to the new directory and extract.
+ 3. [Download or Clone](https://github.com/pepipost/pepipost-sdk-php/archive/master.zip) the Pepipost Repository to the new directory and extract.
  
  4. Check php version using **```php -v```**
  
@@ -65,7 +65,7 @@ Developers already familar with GIT, Composer and some of the other handy tools 
  
  8. Create a new test file in same directory **```test.php```**
  
- 9. Copy the code from [simpleUsage.md](https://github.com/pepipost/pepipost-sdk-php/blob/feature_x/pepipost-sdk-php/simpleUsage.md) or [sampleExample](https://github.com/pepipost/pepipost-sdk-php/blob/feature_x/pepipost-sdk-php/README.md#sample-usage) and paste in test.php.
+ 9. Copy the code from [simpleUsage.md](https://github.com/pepipost/pepipost-sdk-php/blob/master/simpleUsage.md) or [sampleExample](https://github.com/pepipost/pepipost-sdk-php#sample-code-for-testphp) and paste in test.php.
   
  10. Get your API key and Sending Domain from your Pepipost account. 
   
