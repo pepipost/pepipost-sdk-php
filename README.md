@@ -1,229 +1,147 @@
-# Getting started
+![pepipostlogo](https://pepipost.com/assets/img/pepipost-footLogo.png)
 
-Pepipost is a cloud-based SMTP relay service that delivers highly personalised transactional emails to the inbox within seconds of your customer’s transaction
+[![Packagist](https://img.shields.io/packagist/php-v/pepipost/pepipost-sdk-php.svg?style=flat-square)](https://packagist.org/packages/pepipost/pepipost-sdk-php)
+[![Packagist](https://img.shields.io/packagist/dt/pepipost/pepipost-sdk-php.svg?style=flat-square)](https://packagist.org/packages/pepipost/pepipost-sdk-php)
+[![Packagist](https://img.shields.io/github/contributors/pepipost/pepipost-sdk-php.svg)](https://github.com/pepipost)
+[![Packagist](https://img.shields.io/packagist/l/pepipost/pepipost-sdk-php.svg)](https://packagist.org/packages/pepipost/pepipost-sdk-php)
+[![Twitter Follow](https://img.shields.io/twitter/follow/pepi_post.svg?style=social&label=Follow)](https://twitter.com/pepi_post)
 
-## How to Build
+## Official PHP Code library for [Pepipost](http://www.pepipost.com/?utm_campaign=GitHubSDK&utm_medium=GithubSDK&utm_source=GithubSDK)
+This SDK contain methods for easily interacting with the Pepipost Email Sending API to send emails within few seconds.
+ 
+We are trying to make our libraries a Community Driven. To help us building right things in proper order we would request you to help us by sharing comments, creating new [issues](https://github.com/pepipost/pepipost-sdk-php/issues) or [pull request](https://github.com/pepipost/pepipost-sdk-php/pulls).
 
-The generated code has dependencies over external libraries like UniRest. These dependencies are defined in the ```composer.json``` file that comes with the SDK. 
-To resolve these dependencies, we use the Composer package manager which requires PHP greater than 5.3.2 installed in your system. 
-Visit [https://getcomposer.org/download/](https://getcomposer.org/download/) to download the installer file for Composer and run it in your system. 
-Open command prompt and type ```composer --version```. This should display the current version of the Composer installed if the installation was successful.
+## Table of Contents
+* [Installation](#installation)
+* [Quick Start](#quickstart)
+* [Announcements](#announcements)
+* [Roadmap](#roadmap)
+* [About](#about)
+* [License](#license)
 
-* Using command line, navigate to the directory containing the generated files (including ```composer.json```) for the SDK. 
-* Run the command ```composer install```. This should install all the required dependencies and create the ```vendor``` directory in your project directory.
+<a name="installation"></a>
+## Installation (OS Friendly)
 
-![Building SDK - Step 1](https://apidocs.io/illustration/php?step=installDependencies&workspaceFolder=Pepipost%20API-PHP)
+Inorder to make it Smooth we have Separated installation process with respective OS which will help you to go step by step without any interuption.
 
-### [For Windows Users Only] Configuring CURL Certificate Path in php.ini
+1. [Build SDK on Windows without any IDE.](https://github.com/hellovikram/pepipost-sdk-php/blob/master/windows-Installation-1.md)
+2. [Build SDK on Windows/Linux with IDE.](https://github.com/hellovikram/pepipost-sdk-php/blob/master/windows-Installation-2.md)
+3. [Build SDK on Linux.](https://github.com/pepipost/pepipost-sdk-php/blob/master/linux-installation.md)
 
-CURL used to include a list of accepted CAs, but no longer bundles ANY CA certs. So by default it will reject all SSL certificates as unverifiable. You will have to get your CA's cert and point curl at it. The steps are as follows:
+### Prerequisites
+* 1. [PHP >=5.4.0](http://php.net/manual/en/install.php)
+* 2. [Composer](https://getcomposer.org/download/)
+* 3. [CURL](https://curl.haxx.se/)
+* 4. A free account on Pepipost. If you don't have a one, click [here](https://app.pepipost.com/index.php/signup/registeruser?utm_campaign=GitHubSDK&utm_medium=GithubSDK&utm_source=GithubSDK) to signup and get 30,000 emails free every month.
 
-1. Download the certificate bundle (.pem file) from [https://curl.haxx.se/docs/caextract.html](https://curl.haxx.se/docs/caextract.html) on to your system.
-2. Add curl.cainfo = "PATH_TO/cacert.pem" to your php.ini file located in your php installation. “PATH_TO” must be an absolute path containing the .pem file.
+### Setup Global Variables
 
-```ini
-[curl]
-; A default value for the CURLOPT_CAINFO option. This is required to be an
-; absolute path.
-;curl.cainfo =
+Setup the [PEPIPOST API KEY](https://app.pepipost.com/app/settings/integration) in the library to start sending emails. For example:
+
+1. Copy the API KEY from your Pepipost account by navigating to Settings --> Integrations.
+2. Edit the sample code and replace `PEPIPOST_API_KEY` which the one you just copied.
+3. Now the library is ready to authenticate with Pepipost servers for sending emails.
+
+<a name="quickstart"></a>
+## Quick Start
+
+Developers already familar with GIT, Composer and some of the other handy tools can just refer the below steps to quick start with the integration. 
+
+> If you are not sure of how to integrate this library within your environment, then please refer to our detailed [installation](#installation) guide above.
+
+ 1. Open Command prompt/Terminal.
+ 
+ 2. Change directory to any new directory (Make directory test-- recommended).
+ 
+ 3. [Download or Clone](https://github.com/pepipost/pepipost-sdk-php/archive/feature_x.zip) the Pepipost Repository to the new directory and extract.
+ 
+ 4. Check php version using **```php -v```**
+ 
+ 5. Check Composer version **```composer --version```**
+ 
+ 6. Navigate to your directory where the pepipost-php-sdk library is extracted (using cd path\to\directory)
+ 
+ 7. Type **```composer install```** (this will install all the requirement needed to run this library -- Note: After installing, a vendor directory will get auto-created)
+ 
+ 8. Create a new test file in same directory **```test.php```**
+ 
+ 9. Copy the code from [simpleUsage.md](https://github.com/pepipost/pepipost-sdk-php/blob/feature_x/pepipost-sdk-php/simpleUsage.md) or [sampleExample](https://github.com/pepipost/pepipost-sdk-php/blob/feature_x/pepipost-sdk-php/README.md#sample-usage) and paste in test.php.
+  
+ 10. Get your API key and Sending Domain from your Pepipost account. 
+  
+  **```apikey```** will be available under **```Login to Pepipost -> Settings -> Integration```**
+  
+  **```Sending Domain```** will be available under **```Login to Pepiost -> Settings -> Sending Domains ```**
+
+```
+  *Note :: Domains showing wiht Active status on Sending Domain dashboard are only allowed to send any sort of emails.* In case there are no Sending Domain added under your account, then first add the domain, get the DNS (SPF/DKIM) settings done and get it reviewed by our compliance team for approval. Once the domain is approved, it will be in ACTIVE status and will be ready to send any sort of emails. 
 ```
 
-## How to Use
+ 11. Make the required changes in your script test.php (Adding the apikey and Sending Domain is mandatory).
+ 
+ Change your **```$apiKey = 'api-XX-key-XX-here'```** to **```$apiKey = 'api-key-of-your-pepipost-account';```**
+ 
+ Similarly, update your Sending Domain from **```$body->from->fromEmail = 'admin@myfirsttest.com';```** to **```$body->from->fromEmail = 'admin@your-active-domain-on-pepipost';```**
 
-The following section explains how to use the PepipostAPI library in a new project.
+12. Update the rest of the email related payload like Recipent email address, content of the email etc. Below is the sample code with details of payload:
 
-### 1. Open Project in an IDE
-
-Open an IDE for PHP like PhpStorm. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
-
-![Open project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=openIDE&workspaceFolder=Pepipost%20API-PHP)
-
-Click on ```Open``` in PhpStorm to browse to your generated SDK directory and then click ```OK```.
-
-![Open project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=openProject0&workspaceFolder=Pepipost%20API-PHP)     
-
-### 2. Add a new Test Project
-
-Create a new directory by right clicking on the solution name as shown below:
-
-![Add a new project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=createDirectory&workspaceFolder=Pepipost%20API-PHP)
-
-Name the directory as "test"
-
-![Add a new project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=nameDirectory&workspaceFolder=Pepipost%20API-PHP)
-   
-Add a PHP file to this project
-
-![Add a new project in PHPStorm - Step 3](https://apidocs.io/illustration/php?step=createFile&workspaceFolder=Pepipost%20API-PHP)
-
-Name it "testSDK"
-
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=nameFile&workspaceFolder=Pepipost%20API-PHP)
-
-Depending on your project setup, you might need to include composer's autoloader in your PHP code to enable auto loading of classes.
-
-```PHP
-require_once "../vendor/autoload.php";
-```
-
-It is important that the path inside require_once correctly points to the file ```autoload.php``` inside the vendor directory created during dependency installations.
-
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=projectFiles&workspaceFolder=Pepipost%20API-PHP)
-
-After this you can add code to initialize the client library and acquire the instance of a Controller class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
-
-### 3. Run the Test Project
-
-To run your project you must set the Interpreter for your project. Interpreter is the PHP engine installed on your computer.
-
-Open ```Settings``` from ```File``` menu.
-
-![Run Test Project - Step 1](https://apidocs.io/illustration/php?step=openSettings&workspaceFolder=Pepipost%20API-PHP)
-
-Select ```PHP``` from within ```Languages & Frameworks```
-
-![Run Test Project - Step 2](https://apidocs.io/illustration/php?step=setInterpreter0&workspaceFolder=Pepipost%20API-PHP)
-
-Browse for Interpreters near the ```Interpreter``` option and choose your interpreter.
-
-![Run Test Project - Step 3](https://apidocs.io/illustration/php?step=setInterpreter1&workspaceFolder=Pepipost%20API-PHP)
-
-Once the interpreter is selected, click ```OK```
-
-![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=Pepipost%20API-PHP)
-
-To run your project, right click on your PHP file inside your Test project and click on ```Run```
-
-![Run Test Project - Step 5](https://apidocs.io/illustration/php?step=runProject&workspaceFolder=Pepipost%20API-PHP)
-
-## How to Test
-
-Unit tests in this SDK can be run using PHPUnit. 
-
-1. First install the dependencies using composer including the `require-dev` dependencies.
-2. Run `vendor\bin\phpunit --verbose` from commandline to execute tests. If you have 
-   installed PHPUnit globally, run tests using `phpunit --verbose` instead.
-
-You can change the PHPUnit test configuration in the `phpunit.xml` file.
-
-## Initialization
-
-### 
-
-API client can be initialized as following.
+## Sample Code for test.php
 
 ```php
-
-$client = new PepipostAPILib\PepipostAPIClient();
-```
-
-
-# Class Reference
-
-## <a name="list_of_controllers"></a>List of Controllers
-
-* [EmailController](#email_controller)
-
-## <a name="email_controller"></a>![Class: ](https://apidocs.io/img/class.png ".EmailController") EmailController
-
-### Get singleton instance
-
-The singleton instance of the ``` EmailController ``` class can be accessed from the API Client.
-
-```php
-$email = $client->getEmail();
-```
-
-### <a name="create_send_email"></a>![Method: ](https://apidocs.io/img/method.png ".EmailController.createSendEmail") createSendEmail
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> This Endpoint sends emails with the credentials passed.
-
-
-```php
-function createSendEmail(
-        $apiKey = null,
-        $body = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| apiKey |  ``` Optional ```  | Generated header parameter. Example value ='5ce7096ed4bf2b39dfa932ff5fa84ed9ed8' |
-| body |  ``` Optional ```  | The body passed will be json format. |
-
-
-
-#### Example Usage
-
-```php
-$apiKey = 'api_key';
-$body = new EmailBody();
-
-$result = $email->createSendEmail($apiKey, $body);
-
-```
-#### Example of Advance Usage
-
-```php
+<?php
 require_once "vendor/autoload.php";
 $client = new PepipostAPILib\PepipostAPIClient();
 $emailController = $client->getEmail();
 
-$apiKey = 'pass api-key here';
+// Your Pepipost API Key
+$apiKey = 'api-XX-key-XX-here'; #add apikey from panel here
+
 $body = new PepipostAPILib\Models\EmailBody();
 
+// List of Email Recipients
 $body->personalizations = array();
 $body->personalizations[0] = new PepipostAPILib\Models\Personalizations;
-$body->personalizations[0]->recipient = 'my-email-id@domain.com';               #to emails 
-$body->personalizations[0]->recipientCc = array('my-cc-emailid@gmail.com');  #cc emails
-$body->personalizations[0]->xApiheaderCc = 'my_header for CC emails';       #unique header/identifier for cc emails 
-$body->personalizations[0]->xApiheader = 'my_header for emails';            #unique header/identifier for to emails
-$body->personalizations[0]->attributes = PepipostAPILib\APIHelper::deserialize('{"name":"pepi","love":"Emails"}'); #attribute in an object key value form.
+$body->personalizations[0]->recipient = 'Youremailid@XXX.com';               #To/Recipient email address
 
-$body->personalizations[0]->attachments = array();
-$body->personalizations[0]->attachments[0] = new PepipostAPILib\Models\Attachments;
-#file content 
-$body->personalizations[0]->attachments[0]->fileContent = '"SGVsbG8sIHRoaXMgZmlsZSBpcyBhbiBpbmZvcm1hdGlvbmFsIGZpbGU6OiBTZW5kaW5nIGVtYWlscyB0byB0aGUgaW5ib3ggaXMgd2hhdCB3ZSBkbywgYnV0IHRoYXTigJlzIG5vdCB0aGUgb25seSByZWFzb24gd2h5IGRldmVsb3BlcnMgYW5kIGVudGVycHJpc2VzIGxvdmUgdXMuIFdlIGFyZSB0aGUgb25seSBFU1AgdGhhdCBkb2VzbuKAmXQgY2hhcmdlIGZvciBlbWFpbHMgb3BlbmVkLg=="';
-
-$body->personalizations[0]->attachments[0]->fileName = 'pepipost.txt';  #file name 
-
-$body->tags = 'EmailSender';    	   #identifier for campaign/batch emails
-
+// Email Header
 $body->from = new PepipostAPILib\Models\From;
-$body->from->fromEmail = 'pepi@net.xyz';   #need to add register domain available in panel
-$body->from->fromName = 'i am pepi';       #from name
-$body->subject = 'Pepipost mail through php sdk';               #subject of email
-$body->content = '<html><body>Hello, Welcome to Pepipost Family.<br>My name is [% name %].<br>my love is sending [% love %]</body> <br></html>'; #mail body [recomended to pass in rawurlencoded format]
+$body->from->fromEmail = 'admin@myfirsttest.com';   #Sender Domain. Note: The sender domain should be verified and active under your Pepipost account.
+$body->from->fromName = 'Test Admin';       #Sender/From name
 
-#this attachment will be sent to emails with the attachment in personalizations if any (each email,cc,bcc will receive)
-$body->attachments[0] = new PepipostAPILib\Models\EmailBodyAttachments;
-$body->attachments[0]->fileContent = 'SGVsbG8sIHRoaXMgZmlsZSBpcyBhbiBpbmZvcm1hdGlvbmFsIGZpbGU6OiBTZW5kaW5nIGVtYWlscyB0byB0aGUgaW5ib3ggaXMgd2hhdCB3ZSBkbywgYnV0IHRoYXTigJlzIG5vdCB0aGUgb25seSByZWFzb24gd2h5IGRldmVsb3BlcnMgYW5kIGVudGVycHJpc2VzIGxvdmUgdXMuIFdlIGFyZSB0aGUgb25seSBFU1AgdGhhdCBkb2VzbuKAmXQgY2hhcmdlIGZvciBlbWFpbHMgb3BlbmVkLg==';
-$body->attachments[0]->fileName = 'pepipost_1.txt';
+//Email Body Content
+$body->subject = 'Pepipost mail through php sdk';               #Subject of email
+$body->content = '<html><body>Hello, Email testing is successful. <br> Hope you enjoyed this integration. <br></html>'; #HTML content which need to be send in the mail body
 
+// Email Settings
 $body->settings = new PepipostAPILib\Models\Settings;
-$body->settings->footer = 1;        #footer for emails enable=1 | disable=0
 $body->settings->clicktrack = 1;    #clicktrack for emails enable=1 | disable=0
 $body->settings->opentrack = 1;     #opentrack for emails enable=1 | disable=0
 $body->settings->unsubscribe = 1;   #unsubscribe for emails enable=1 | disable=0
-$body->replyToId = 'replyto@gmail.com';
-$body->templateId = 5441;
-$body->settings->bcc = 'mybcc-email@email.in';
 
 $response = $emailController->createSendEmail($apiKey,$body);   #function sends email
 print_r(json_encode($response));
 ?>
-
 ```
 
-#### Author
-![Vikram Sahu](https://github.com/imvsahu)
+For more information about the parameters, we would like to recommend our [API docs](https://developers.pepipost.com/email-api/sendEmail)
 
-Developer Evangelist | Pepipost
+<a name="announcements"></a>
+# Announcements
 
-This SDK was semi-automatically generated by APIMATIC v2.0. Thanks to APIMATIC
+v3 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-php/releases/tag/v3.0.0) for details.
 
+All updates to this library are documented in our [CHANGELOG](https://github.com/pepipost/pepipost-sdk-php/blob/master/CHANGELOG.md) and [releases](https://github.com/pepipost/pepipost-sdk-php/releases). For any queries, feel free to reach out us at dx@pepipost.com
 
+<a name="roadmap"></a>
+## Roadmap
 
+If you are interested in the future direction of this project, please take a look at our open [issues](https://github.com/pepipost/pepipost-sdk-php/issues) and [pull requests](https://github.com/pepipost/pepipost-sdk-php/pulls). We would love to hear your feedback.
+
+<a name="about"></a>
+## About
+pepipost-php-sdk library is guided and supported by the Pepipost Developer Experience Team.
+This pepipost-php-sdk library is maintained and funded by Pepipost Ltd. The names and logos for pepipost-php-sdk are trademarks of Pepipost Ltd.
+
+<a name="license"></a>
+## License
+This code library was semi-automatically generated by APIMATIC v2.0 and licensed under The MIT License (MIT). 

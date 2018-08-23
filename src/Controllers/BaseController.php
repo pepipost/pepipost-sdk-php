@@ -61,6 +61,7 @@ class BaseController
     protected function validateResponse(HttpResponse $response, HttpContext $_httpContext)
     {
         if (($response->getStatusCode() < 200) || ($response->getStatusCode() > 208)) { //[200,208] = HTTP OK
+	return $_httpContext;
             throw new APIException('HTTP Response Not OK', $_httpContext);
         }
     }

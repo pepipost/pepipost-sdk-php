@@ -23,21 +23,30 @@ class SendEmailResponse implements JsonSerializable
 
     /**
      * @todo Write general description for this property
-     * @required
-     * @var object $message public property
+     * @var string $message public property
      */
     public $message;
 
     /**
+     * @todo Write general description for this property
+     * @required
+     * @maps error_info
+     * @var \PepipostAPILib\Models\SendEmailError $errorInfo public property
+     */
+    public $errorInfo;
+
+    /**
      * Constructor to set initial or default values of member properties
-     * @param object $data    Initialization value for $this->data
-     * @param object $message Initialization value for $this->message
+     * @param object         $data      Initialization value for $this->data
+     * @param string         $message   Initialization value for $this->message
+     * @param SendEmailError $errorInfo Initialization value for $this->errorInfo
      */
     public function __construct()
     {
-        if (2 == func_num_args()) {
-            $this->data    = func_get_arg(0);
-            $this->message = func_get_arg(1);
+        if (3 == func_num_args()) {
+            $this->data      = func_get_arg(0);
+            $this->message   = func_get_arg(1);
+            $this->errorInfo = func_get_arg(2);
         }
     }
 
@@ -48,8 +57,9 @@ class SendEmailResponse implements JsonSerializable
     public function jsonSerialize()
     {
         $json = array();
-        $json['data']    = $this->data;
-        $json['message'] = $this->message;
+        $json['data']       = $this->data;
+        $json['message']    = $this->message;
+        $json['error_info'] = $this->errorInfo;
 
         return $json;
     }
