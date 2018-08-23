@@ -25,7 +25,7 @@ We are trying to make our libraries a Community Driven. To help us building righ
 Inorder to make it Smooth we have Separated installation process with respective OS which will help you to go step by step without any interuption.
 
 1. [Build SDK on Windows without any IDE.](https://github.com/pepipost/pepipost-sdk-php/blob/master/windows-Installation-1.md)
-2. [Build SDK on Windows/Linux with IDE.](https://github.com/pepipost/pepipost-sdk-php/blob/master/windows-Installation-2.md)
+2. [Build SDK on Windows/Linux with IDE.](https://github.com/pepipost/pepipost-sdk-php/blob/master/windows-installation-2.md)
 3. [Build SDK on Linux.](https://github.com/pepipost/pepipost-sdk-php/blob/master/linux-installation.md)
 
 ### Prerequisites
@@ -128,9 +128,9 @@ For more information about the parameters, we would like to recommend our [API d
 <a name="announcements"></a>
 # Announcements
 
-v3 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-php/releases/tag/v3.0.0) for details.
+v2.5.0 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-php/releases/tag/v2.5.0) for details.
 
-All updates to this library are documented in our [CHANGELOG](https://github.com/pepipost/pepipost-sdk-php/blob/master/CHANGELOG.md) and [releases](https://github.com/pepipost/pepipost-sdk-php/releases). For any queries, feel free to reach out us at dx@pepipost.com
+All updates to this library are documented in our [releases](https://github.com/pepipost/pepipost-sdk-php/releases). For any queries, feel free to reach out us at dx@pepipost.com
 
 <a name="roadmap"></a>
 ## Roadmap
