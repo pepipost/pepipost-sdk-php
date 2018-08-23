@@ -18,7 +18,6 @@ We appreciate your continued support, thank you! Let's move ahead on the install
 
 1. Install [XAMPP](https://www.apachefriends.org/download.html). Skip this step, in case you already have the PHP installed.
 
-<<<<<<< HEAD
 2. Install [COMPOSER](https://getcomposer.org/doc/00-intro.md#installation-windows).
    ![imgcomposer](http://app1.falconide.com/integration_imgs/windows_without_IDE/1.png)
 
@@ -30,16 +29,7 @@ We appreciate your continued support, thank you! Let's move ahead on the install
    2.2. Installation directory will be shown at the below:
    
    ![installation2](http://app1.falconide.com/integration_imgs/windows_without_IDE/3.png)
-=======
-Step 2. Install [COMPOSER](https://getcomposer.org/doc/00-intro.md#installation-windows).
-
-![imgcomposer](http://app1.falconide.com/integration_imgs/windows_without_IDE/1.png)
-
-  2.1. As soon as you download composer.exe file from the above link pop will appear below:
-  
-  ![installation](http://app1.falconide.com/integration_imgs/windows_without_IDE/2.png)
->>>>>>> 8d2f01bdf78cb8af21f3cee356f2b8523ad67ba6
-  
+ 
   
    2.3. Proxy URL if you want any, we don't want such for now so keeping blank
   
@@ -120,7 +110,7 @@ Open xampp Control panel -> config(php.ini) file shown below
 13. Open file with notepad (for simpliest debugging would like to recommend :: notepad++ (https://notepad-plus-plus.org/download/v7.5.8.html))
  
  
-14. Copy and paste Simple Usage example from ![simpleUsage.php](https://github.com/pepipost/pepipost-sdk-php/blob/feature_x/pepipost-sdk-php/simpleUsage.php) in **test.php**
+14. Copy and paste Simple Usage example from ![simpleUsage.php](https://github.com/pepipost/pepipost-sdk-php/blob/master/simpleUsage.md) in **test.php**
  
 15. Make changes in the file (replace/add your credentials available from panel) 
   
