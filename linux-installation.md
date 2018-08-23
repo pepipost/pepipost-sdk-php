@@ -64,7 +64,7 @@ Below Steps will Guide you Step by Step, So that your installation is completed 
     
       Make File testSDK.php (open in any editor).
     
-      Copy and paste Sample Code from [simpleUsage](https://github.com/pepipost/pepipost-php/blob/feature_x/pepipost-sdk-php/simpleUsage.md) file
+      Copy and paste Sample Code from [simpleUsage](https://github.com/pepipost/pepipost-sdk-php/blob/master/simpleUsage.md) file
     
    8. Grab your apiKey and SendingDomain from panel
 
