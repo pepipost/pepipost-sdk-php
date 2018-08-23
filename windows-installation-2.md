@@ -9,7 +9,7 @@ These steps are dedicated to those who ❤️ to code on IDE.
 
 ### Installation Steps
 
-1. Please Follow first 3 Steps of installation same as [Windows without IDE](https://github.com/pepipost/pepipost-php-sdk/blob/feature_x/pepipost-sdk-php/windows-Installation-1.md#installation-step)  
+1. Please Follow first 3 Steps of installation same as [Windows without IDE](https://github.com/pepipost/pepipost-sdk-php/blob/master/windows-Installation-1.md)  
 
 2. Install any IDE you Love to work with.
 
@@ -72,7 +72,7 @@ These steps are dedicated to those who ❤️ to code on IDE.
 
    ![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=Pepipost%20API-PHP)
 
-   Copy/Paste sample Example from simpleUsage.md to the ![testSDK.php](https://github.com/pepipost/pepipost-php/blob/feature_x/pepipost-sdk-php/simpleUsage.md) file and Save.
+   Copy/Paste sample example from simpleUsage.md to the ![testSDK.php](https://github.com/pepipost/pepipost-sdk-php/blob/master/simpleUsage.md) file and Save.
 
    To run your project, right click on your PHP file inside your Test project and click on ```Run```
 
