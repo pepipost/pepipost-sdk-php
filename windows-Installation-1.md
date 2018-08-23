@@ -56,7 +56,7 @@ We appreciate your continued support, thank you! Let's move ahead on the install
    ![cmd](http://app1.falconide.com/integration_imgs/windows_without_IDE/8.png) 
 
 
-4. Download zip or clone git repo from ![Pepipost Repository](https://github.com/pepipost/pepipost-sdk-php/archive/master.zip)
+4. Download zip or clone git repo from [Pepipost Repository](https://github.com/pepipost/pepipost-sdk-php/archive/master.zip)
 
    ![dwnimg](http://app1.falconide.com/integration_imgs/windows_without_IDE/9.png)
 
@@ -110,7 +110,7 @@ Open xampp Control panel -> config(php.ini) file shown below
 13. Open file with notepad (for simpliest debugging would like to recommend :: notepad++ (https://notepad-plus-plus.org/download/v7.5.8.html))
  
  
-14. Copy and paste Simple Usage example from ![simpleUsage.php](https://github.com/pepipost/pepipost-sdk-php/blob/master/simpleUsage.md) in **test.php**
+14. Copy and paste Simple Usage example from [simpleUsage.php](https://github.com/pepipost/pepipost-sdk-php/blob/master/simpleUsage.md) in **test.php**
  
 15. Make changes in the file (replace/add your credentials available from panel) 
   
