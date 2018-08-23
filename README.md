@@ -49,35 +49,31 @@ Developers already familar with GIT, Composer and some of the other handy tools 
 
 > If you are not sure of how to integrate this library within your environment, then please refer to our detailed [installation](#installation) guide above.
 
- 1. Check php version using 
+1. Check php version using 
  
   ```php -v```
  
- 2. Check Composer version 
+2. Check Composer version 
   
   ```composer --version```
  
- 3. Clone Repository using below command
+3. Clone Repository using below command
  
   ```git clone https://github.com/pepipost/pepipost-sdk-php.git testSDK```
  
- 4. Change directory 
+4. Change directory 
  
   ```cd testSDK```
  
- 5.  Below will install all the requirement needed to run this library. After installing, a vendor directory will get auto-created
+5.  Below will install all the requirement needed to run this library. After installing, a vendor directory will get auto-created
  
   ```composer install```
  
- 6. Create a test file  
-  
-   ```vim test.php```
- 
- 7. Copy the code and paste in test.php from [simpleUsage.md](https://github.com/pepipost/pepipost-sdk-php/blob/master/simpleUsage.md) or [sampleExample](https://github.com/pepipost/pepipost-sdk-php#sample-code-for-testphp) .
+6. Copy the code and paste in test.php from [simpleUsage.md](https://github.com/pepipost/pepipost-sdk-php/blob/master/simpleUsage.md) or [sampleExample](https://github.com/pepipost/pepipost-sdk-php#sample-code-for-testphp) .
  
   ```cp simpleUsage.md test.php```
   
- 8. Get your API key and Sending Domain from your Pepipost account. 
+7. Get your API key and Sending Domain from your Pepipost account. 
   
   * **apikey** will be available under Login to Pepipost -> Settings -> Integration  
   * **Sending Domain** will be available under Login to Pepiost -> Settings -> Sending Domains 
@@ -86,7 +82,7 @@ Developers already familar with GIT, Composer and some of the other handy tools 
   *Note :: Domains showing with Active status on Sending Domain dashboard are only allowed to send any sort of emails.* In case there are no Sending Domain added under your account, then first add the domain, get the DNS (SPF/DKIM) settings done and get it reviewed by our compliance team for approval. Once the domain is approved, it will be in ACTIVE status and will be ready to send any sort of emails. 
 ```
 
- 9. Make the required changes in your script test.php (Adding the apikey and Sending Domain is mandatory).
+8. Make the required changes in your script test.php (Adding the apikey and Sending Domain is mandatory).
  
  Change your **```$apiKey = 'api-XX-key-XX-here'```** to **```$apiKey = 'api-key-of-your-pepipost-account';```**
  
@@ -94,7 +90,7 @@ Developers already familar with GIT, Composer and some of the other handy tools 
  
  **```$body->from->fromEmail = 'admin@myfirsttest.com';```** to **```$body->from->fromEmail = 'admin@your-active-domain-on-pepipost';```**
 
-10. Update the rest of the email related payload like Recipent email address, content of the email etc. Below is the sample code with details of payload:
+9. Update the rest of the email related payload like Recipent email address, content of the email etc. Below is the sample code with details of payload:
 
 
 ## Sample Code for test.php
@@ -137,7 +133,7 @@ print_r(json_encode($response));
 
 For more information about the parameters, we would like to recommend our [API docs](https://developers.pepipost.com/email-api/sendEmail)
 
-11. Run your script to send your first test email
+10. Run your script to send your first test email
 
  ```php test.php```
   
