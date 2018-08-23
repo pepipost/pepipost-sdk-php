@@ -49,15 +49,15 @@ Developers already familar with GIT, Composer and some of the other handy tools 
 
 > If you are not sure of how to integrate this library within your environment, then please refer to our detailed [installation](#installation) guide above.
 
-1. Check php version using 
+1. Check php version using below command. Required PHP >=5.4.0. 
  
   ```php -v```
  
-2. Check Composer version 
+2. Verify if the Composer is installed using the below command: 
   
   ```composer --version```
  
-3. Clone Repository using below command
+3. Clone this repository on your machine using below command:
  
   ```git clone https://github.com/pepipost/pepipost-sdk-php.git testSDK```
  
