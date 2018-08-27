@@ -31,9 +31,9 @@ Below Steps will Guide you Step by Step, So that your installation is completed 
      
   3. Open Command prompt/ terminal. 
 
-  4. make Test Directory or you can directly copy the clone git command below
+  4. make Test Directory or you can directly copy the git clone command below
   
-    ``` mkdir test ```
+     ``` mkdir test ```
  
   5. Download SDK 
   
