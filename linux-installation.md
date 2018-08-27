@@ -33,7 +33,7 @@ Below Steps will Guide you Step by Step, So that your installation is completed 
 
   4. make Test Directory or you can directly copy the clone git command below
   
-    ```mkdir test```
+    ``` mkdir test ```
  
   5. Download SDK 
   
