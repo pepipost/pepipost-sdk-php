@@ -12,11 +12,7 @@ then please whitelist the API base URL api.pepipost.com with port 443/80
 The Code has few Dependencies which we have listed in our ```composer.json``` file which comes with our SDK.
 Below Steps will Guide you Step by Step, So that your installation is completed Smoothly.
 
-  1. Open Command prompt/ terminal. 
-
-  2. Change Directory to any new directory (Make directory test-- recommended).
-
-  3. Check PHP version (should be >= 5.4.0)
+  1. Check PHP version (should be >= 5.4.0)
      
      ```php -v```
      
@@ -24,13 +20,20 @@ Below Steps will Guide you Step by Step, So that your installation is completed 
       
       or you can install [PHP](http://php.net/manual/en/install.unix.debian.php) if it is not installed
     
-  4. Check composer version 
+  2. Check composer version 
   
      ```composer --version```
      
      ![comp](http://app1.falconide.com/integration_imgs/linux/l1.1.png)
      
      or download [composer](https://getcomposer.org/download/) if composer is not installed
+     
+     
+  3. Open Command prompt/ terminal. 
+
+  4. make Test Directory or you can directly copy the clone git command below
+  
+    ```mkdir test```
  
   5. Download SDK 
   
@@ -42,7 +45,7 @@ Below Steps will Guide you Step by Step, So that your installation is completed 
   
      Clone [Pepipost PHP Repo](https://github.com/pepipost/pepipost-sdk-php.git)
       
-     Using **git clone https://github.com/pepipost/pepipost-sdk-php.git**
+     ```git clone https://github.com/pepipost/pepipost-sdk-php.git test```
       
      ![clone](http://app1.falconide.com/integration_imgs/linux/l3.png)
       
@@ -54,17 +57,26 @@ Below Steps will Guide you Step by Step, So that your installation is completed 
 
    6. Resolving Dependencies 
     
-      Change your Directory to **test** (unzipped or cloned directory).
+      Change your Directory 
+      
+      ```cd test``` (unzipped or cloned directory).
     
-      use ```composer install``` to install all dependencies
+      use below to install all dependencies
+      
+      ```composer install```
    
       ![composerinstall](http://app1.falconide.com/integration_imgs/linux/l4.png)
 
    7. Running Sample Code.
     
-      Make File testSDK.php (open in any editor).
+      ```vim testSDK.php``` (open in any editor).
     
       Copy and paste Sample Code from [simpleUsage](https://github.com/pepipost/pepipost-sdk-php/blob/master/simpleUsage.md) file
+      
+      **OR**
+      
+      ``` mv SimpleUsage.md  testSDK.php```
+      
     
    8. Grab your apiKey and SendingDomain from panel
 
