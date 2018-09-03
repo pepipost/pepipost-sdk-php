@@ -8,9 +8,9 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/pepi_post.svg?style=social&label=Follow)](https://twitter.com/pepi_post)
 
 ## Official PHP Code library for [Pepipost](http://www.pepipost.com/?utm_campaign=GitHubSDK&utm_medium=GithubSDK&utm_source=GithubSDK)
-This SDK contain methods for easily interacting with the Pepipost Email Sending API to send emails within few seconds.
- 
-We are trying to make our libraries a Community Driven. To help us building right things in proper order we would request you to help us by sharing comments, creating new [issues](https://github.com/pepipost/pepipost-sdk-php/issues) or [pull request](https://github.com/pepipost/pepipost-sdk-php/pulls).
+This SDK contains methods for easily interacting with the Pepipost Email Sending API to send emails in a few seconds.
+
+We are trying to make our libraries community driven and we need your help in building the right things the right way you. Your opinion is very much valued so please share comments, create [issues](https://github.com/pepipost/pepipost-sdk-php/issues) and [pull requests]((https://github.com/pepipost/pepipost-sdk-php/pulls)).
 
 ## Table of Contents
 * [Installation](#installation)
