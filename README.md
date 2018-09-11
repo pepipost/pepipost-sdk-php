@@ -147,7 +147,7 @@ For more information about the parameters, we would like to recommend our [API d
 
 v2.5.0 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-php/releases/tag/v2.5.0) for details.
 
-All updates to this library are documented in our [releases](https://github.com/pepipost/pepipost-sdk-php/releases). For any queries, feel free to reach out us at dx@pepipost.com
+All updates to this library are documented in our [releases](https://github.com/pepipost/pepipost-sdk-php/releases). For any queries and feedbacks, feel free to reach out us at dx@pepipost.com
 
 <a name="roadmap"></a>
 ## Roadmap
