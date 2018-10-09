@@ -66,7 +66,7 @@ class EmailController extends BaseController
 
         //prepare headers
         $_headers = array (
-            'user-agent'    => 'APIMATIC 2.0',
+            'user-agent'    => 'pepi-sdk-php v2',
             'Accept'        => 'application/json',
             'content-type'  => 'application/json; charset=utf-8',
             'api_key'         => $apiKey
