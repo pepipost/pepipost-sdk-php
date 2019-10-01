@@ -54,6 +54,19 @@ class Personalizations implements JsonSerializable
     public $recipientCc;
 
     /**
+     * @todo Write general description for this property
+     * @maps recipient_cc
+     * @var array|null $recipientBcc public property
+     */
+    public $recipientBcc;
+
+    /**
+     * @todo Write general description for this property
+     * @var object|null $xheaders public property
+     */
+    public $xheaders;
+
+    /**
      * Constructor to set initial or default values of member properties
      * @param string $recipient    Initialization value for $this->recipient
      * @param string $xApiheaderCc Initialization value for $this->xApiheaderCc
@@ -61,6 +74,8 @@ class Personalizations implements JsonSerializable
      * @param object $attributes   Initialization value for $this->attributes
      * @param array  $attachments  Initialization value for $this->attachments
      * @param array  $recipientCc  Initialization value for $this->recipientCc
+     * @param array  $recipientBcc Initialization value for $this->recipientBcc
+     * @param array  $xheaders     Initialization value for $this->xheaders
      */
     public function __construct()
     {
@@ -71,6 +86,8 @@ class Personalizations implements JsonSerializable
             $this->attributes   = func_get_arg(3);
             $this->attachments  = func_get_arg(4);
             $this->recipientCc  = func_get_arg(5);
+            $this->recipientBcc = func_get_arg(6);
+            $this->xheaders     = func_get_arg(7);
         }
     }
 
@@ -87,6 +104,8 @@ class Personalizations implements JsonSerializable
         $json['attributes']     = $this->attributes;
         $json['attachments']    = $this->attachments;
         $json['recipient_cc']   = $this->recipientCc;
+        $json['recipient_bcc']  = $this->recipientBcc;
+        $json['x-headers']      = $this->xheaders;
 
         return $json;
     }
