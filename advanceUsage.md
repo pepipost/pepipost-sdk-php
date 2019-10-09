@@ -15,7 +15,8 @@ $body->personalizations[0]->recipient = 'my-email-id@domain.com';               
 $body->personalizations[0]->recipientCc = array('my-cc-emailid@gmail.com');  #cc emails
 $body->personalizations[0]->xApiheaderCc = 'my_header for CC emails';       #unique header/identifier for cc emails 
 $body->personalizations[0]->xApiheader = 'my_header for emails';            #unique header/identifier for to emails
-$body->personalizations[0]->attributes = PepipostAPILib\APIHelper::deserialize('{"name":"pepi","love":"Emails"}'); #attribute in an object key value form.
+$attributes = new PepipostAPILib\Models\Attributes('{"name":"pepi","love":"Emails"}');#attribute in an object key value form.
+$body->personalizations[0]->attributes = $attributes->getAttributes();
 
 $body->personalizations[0]->attachments = array();
 $body->personalizations[0]->attachments[0] = new PepipostAPILib\Models\Attachments;
@@ -24,7 +25,9 @@ $body->personalizations[0]->attachments[0]->fileContent = '"SGVsbG8sIHRoaXMgZmls
 
 $body->personalizations[0]->attachments[0]->fileName = 'pepipost.txt';  #file name 
 $body->personalizations[0]->recipientBcc = array('my-email-bcc-id@domain.com');  #bcc emails
-$body->personalizations[0]->xheaders = PepipostAPILib\APIHelper::deserialize('{"custom_key1":"custom_value1","custom_key2":"custom_value2"}'); #attribute in an object key value form.
+
+$xheaders = new PepipostAPILib\Models\Xheaders('{"custom_key1":"custom_value1","custom_key2":"custom_value2"}');#xheaders in an object key value form.
+$body->personalizations[0]->xheaders = $xheaders->getXheaders();
 
 $body->tags = 'EmailSender';    	   #identifier for campaign/batch emails
 

@@ -95,11 +95,11 @@ class EmailBody implements JsonSerializable
             $this->from             = func_get_arg(2);
             $this->subject          = func_get_arg(3);
             $this->content          = func_get_arg(4);
-            $this->ampcontent       = func_get_arg(5);
-            $this->attachments      = func_get_arg(6);
-            $this->settings         = func_get_arg(7);
-            $this->replyToId        = func_get_arg(8);
-            $this->templateId       = func_get_arg(9);
+            $this->attachments      = func_get_arg(5);
+            $this->settings         = func_get_arg(6);
+            $this->replyToId        = func_get_arg(7);
+            $this->templateId       = func_get_arg(8);
+            $this->ampcontent       = func_get_arg(9);
         }
     }
 
@@ -114,12 +114,12 @@ class EmailBody implements JsonSerializable
         $json['tags']             = $this->tags;
         $json['from']             = $this->from;
         $json['subject']          = $this->subject;
-        $json['content']          = $this->content;
         $json['ampcontent']       = $this->ampcontent;
         $json['attachments']      = $this->attachments;
         $json['settings']         = $this->settings;
         $json['replyToId']        = $this->replyToId;
         $json['templateId']       = $this->templateId;
+        $json['content']          = $this->content;
 
         return $json;
     }

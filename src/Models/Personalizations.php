@@ -79,7 +79,7 @@ class Personalizations implements JsonSerializable
      */
     public function __construct()
     {
-        if (6 == func_num_args()) {
+        if (8 == func_num_args()) {
             $this->recipient    = func_get_arg(0);
             $this->xApiheaderCc = func_get_arg(1);
             $this->xApiheader   = func_get_arg(2);
