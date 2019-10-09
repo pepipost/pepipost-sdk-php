@@ -15,30 +15,16 @@ use PepipostAPILib\APIHelper;
 class Attributes
 {
     /**
-     * @todo Write general description for this property
-     * @var string|null $attributes public property
-     */
-    public $attributes;
-
-    /**
      * Constructor to set initial or default values of member properties
-     * @param string $attributes Initialization value for $this->attributes
+     * @param string $attributes Initialization value for attributes object
      */
     public function __construct()
     {
         if (func_num_args() > 0) {
-            $this->attributes = func_get_arg(0);
+            $xheaders = APIHelper::deserialize(func_get_arg(0));
+            foreach ($xheaders as $key => $value) {
+                $this->$key = $value;
+            }
         }
-    }
-
-    /**
-     * Get attributes in arraylist format
-     */
-    public function getAttributes()
-    {
-        if ($this->attributes == null || empty($this->attributes)) {
-            return null;
-        }
-        return APIHelper::deserialize($this->attributes);
     }
 }

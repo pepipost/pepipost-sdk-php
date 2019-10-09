@@ -14,31 +14,18 @@ use PepipostAPILib\APIHelper;
  */
 class Xheaders
 {
-    /**
-     * @todo Write general description for this property
-     * @var string|null $xheaders public property
-     */
-    public $xheaders;
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param string $xheaders Initialization value for $this->xheaders
+     * @param string $xheaders Initialization value for xheaders object
      */
     public function __construct()
     {
         if (func_num_args() > 0) {
-            $this->xheaders = func_get_arg(0);
+            $xheaders = APIHelper::deserialize(func_get_arg(0));
+            foreach ($xheaders as $key => $value) {
+                $this->$key = $value;
+            }
         }
-    }
-
-    /**
-     * Get attributes in arraylist format
-     */
-    public function getXheaders()
-    {
-        if ($this->xheaders == null || empty($this->xheaders)) {
-            return null;
-        }
-        return APIHelper::deserialize($this->xheaders);
     }
 }
