@@ -51,7 +51,7 @@ $body->templateId = 5441;
 $body->settings->bcc = 'mybcc-email@email.in';
 
 # Add endpoint URL (optional)
-define("URL", "https://stagesgapi.pepipost.com/v3/mail/send");
+define("URL", "https://<api-endpoint>");
 
 $response = $emailController->createSendEmail($apiKey,$body,URL);   #function sends email
 print_r(json_encode($response));
