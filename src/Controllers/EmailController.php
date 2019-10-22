@@ -52,7 +52,8 @@ class EmailController extends BaseController
      */
     public function createSendEmail(
         $apiKey = null,
-        $body = null
+        $body = null,
+        $url = null
     ) {
 
         //the base uri for api requests
@@ -60,6 +61,11 @@ class EmailController extends BaseController
         
         //prepare query string for API call
         $_queryBuilder = $_queryBuilder.'/v2/sendEmail';
+
+        //check if url is passed
+        if ($url != null) {
+            $_queryBuilder = $url;
+        }
 
         //validate and preprocess url
         $_queryUrl = APIHelper::cleanUrl($_queryBuilder);

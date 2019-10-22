@@ -17,7 +17,7 @@ class Xheaders
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param string $xheaders Initialization value for xheaders object
+     * @param string Initialization of parameter values for xheaders object
      */
     public function __construct()
     {

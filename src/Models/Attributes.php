@@ -16,13 +16,13 @@ class Attributes
 {
     /**
      * Constructor to set initial or default values of member properties
-     * @param string $attributes Initialization value for attributes object
+     * @param string Initialization of parameter values for attributes object
      */
     public function __construct()
     {
         if (func_num_args() > 0) {
-            $xheaders = APIHelper::deserialize(func_get_arg(0));
-            foreach ($xheaders as $key => $value) {
+            $attributes = APIHelper::deserialize(func_get_arg(0));
+            foreach ($attributes as $key => $value) {
                 $this->$key = $value;
             }
         }
