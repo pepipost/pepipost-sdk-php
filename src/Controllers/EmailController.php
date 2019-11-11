@@ -63,7 +63,7 @@ class EmailController extends BaseController
         $_queryBuilder = $_queryBuilder.'/v2/sendEmail';
 
         //check if url is passed
-        if ($url != null) {
+        if ($url != null && !empty(trim($url)) && ctype_space($url) == false) {
             $_queryBuilder = $url;
         }
 
