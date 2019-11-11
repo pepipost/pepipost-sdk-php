@@ -46,6 +46,12 @@ class EmailBody implements JsonSerializable
 
     /**
      * @todo Write general description for this property
+     * @var string|null $ampcontent public property
+     */
+    public $ampcontent;
+
+    /**
+     * @todo Write general description for this property
      * @var \PepipostAPILib\Models\EmailBodyAttachments[]|null $attachments public property
      */
     public $attachments;
@@ -75,6 +81,7 @@ class EmailBody implements JsonSerializable
      * @param From     $from             Initialization value for $this->from
      * @param string   $subject          Initialization value for $this->subject
      * @param string   $content          Initialization value for $this->content
+     * @param string   $ampcontent       Initialization value for $this->ampcontent
      * @param array    $attachments      Initialization value for $this->attachments
      * @param Settings $settings         Initialization value for $this->settings
      * @param string   $replyToId        Initialization value for $this->replyToId
@@ -82,7 +89,7 @@ class EmailBody implements JsonSerializable
      */
     public function __construct()
     {
-        if (9 == func_num_args()) {
+        if (10 == func_num_args()) {
             $this->personalizations = func_get_arg(0);
             $this->tags             = func_get_arg(1);
             $this->from             = func_get_arg(2);
@@ -92,6 +99,7 @@ class EmailBody implements JsonSerializable
             $this->settings         = func_get_arg(6);
             $this->replyToId        = func_get_arg(7);
             $this->templateId       = func_get_arg(8);
+            $this->ampcontent       = func_get_arg(9);
         }
     }
 
@@ -106,11 +114,12 @@ class EmailBody implements JsonSerializable
         $json['tags']             = $this->tags;
         $json['from']             = $this->from;
         $json['subject']          = $this->subject;
-        $json['content']          = $this->content;
+        $json['ampcontent']       = $this->ampcontent;
         $json['attachments']      = $this->attachments;
         $json['settings']         = $this->settings;
         $json['replyToId']        = $this->replyToId;
         $json['templateId']       = $this->templateId;
+        $json['content']          = $this->content;
 
         return $json;
     }
