@@ -98,38 +98,53 @@ Developers already familar with GIT, Composer and some of the other handy tools 
 
 ```php
 <?php
+
 require_once "vendor/autoload.php";
-$client = new PepipostAPILib\PepipostAPIClient();
-$emailController = $client->getEmail();
+use PepipostLib\Models;
+use PepipostLib\Exceptions;
 
-// Your Pepipost API Key
-$apiKey = 'api-XX-key-XX-here'; #add apikey from panel here
+$apiKey = '96c909c62bcc1dffacef7dfdda34ea8477';
 
-$body = new PepipostAPILib\Models\EmailBody();
+$client = new PepipostLib\PepipostClient($apiKey);
+$sendController = $client->getSend();
 
-// List of Email Recipients
+$body = new Models\Send;
+$body->from = new Models\From;
+$body->from->email = 'hello@your-registered-domain-with-pepipost';
+$body->from->name = 'Pepipost';
+$body->subject = 'Pepipost Test Mail from PHP SDK';
+
+
+$body->content = array();
+$body->content[0] = new Models\Content;
+$body->content[0]->type = Models\TypeEnum::HTML;
+$body->content[0]->value = '<html><body>Hello [%NAME%], Email testing is successful. <br> Hope you enjoyed this integration. <br></html>';
+
 $body->personalizations = array();
-$body->personalizations[0] = new PepipostAPILib\Models\Personalizations;
-$body->personalizations[0]->recipient = 'Youremailid@XXX.com';               #To/Recipient email address
+$body->personalizations[0] = new Models\Personalizations;
+$body->personalizations[0]->attributes = PepipostLib\APIHelper::deserialize('{"NAME":"User"}');
+$body->personalizations[0]->to = array();
 
-// Email Header
-$body->from = new PepipostAPILib\Models\From;
-$body->from->fromEmail = 'admin@myfirsttest.com';   #Sender Domain. Note: The sender domain should be verified and active under your Pepipost account.
-$body->from->fromName = 'Test Admin';       #Sender/From name
+$body->personalizations[0]->to[0] = new Models\EmailStruct;
+$body->personalizations[0]->to[0]->name = 'to-address@mydomain.name';
+$body->personalizations[0]->to[0]->email = 'my-first-user';
 
-//Email Body Content
-$body->subject = 'Pepipost mail through php sdk';               #Subject of email
-$body->content = '<html><body>Hello, Email testing is successful. <br> Hope you enjoyed this integration. <br></html>'; #HTML content which need to be send in the mail body
+$body->settings = new Models\Settings;
+$body->settings->footer = true;
+$body->settings->clickTrack = true;
+$body->settings->openTrack = true;
+$body->settings->unsubscribeTrack = true;
+$body->settings->bcc = array();
 
-// Email Settings
-$body->settings = new PepipostAPILib\Models\Settings;
-$body->settings->clicktrack = 1;    #clicktrack for emails enable=1 | disable=0
-$body->settings->opentrack = 1;     #opentrack for emails enable=1 | disable=0
-$body->settings->unsubscribe = 1;   #unsubscribe for emails enable=1 | disable=0
-
-$response = $emailController->createSendEmail($apiKey,$body);   #function sends email
-print_r(json_encode($response));
+try {
+  $result = $sendController->createGenerateTheMailSendRequest($body);
+  var_dump($result);
+} catch (PepipostLib\APIException $e) {
+    echo 'Caught APIException: ',  $e->getMessage(), "\n"; 
+}
 ?>
+
+
 ```
 
 For more information about the parameters, we would like to recommend our [API docs](https://developers.pepipost.com/email-api/sendEmail)
@@ -140,7 +155,15 @@ For more information about the parameters, we would like to recommend our [API d
   
    This will give you following output:
    
- ```{"data":{},"message":"Success","error_info":null} ```
+ ```json
+ {
+	"data": {
+		"message_id": "e8820eeb0ee94807f1ce88652b1dd627"
+	},
+	"message": "OK",
+	"status": "success"
+}
+ ```
 
 <a name="announcements"></a>
 # Announcements
