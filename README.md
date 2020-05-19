@@ -25,7 +25,7 @@ We are trying to make our libraries community driven and we need your help in bu
 
 For a smooth installation process, we have categorized installation process according to OS:
 
-1. [Build SDK on Windows without any IDE.](https://github.com/pepipost/pepipost-sdk-php/blob/master/windows-Installation-1.md)
+1. [Build SDK on Windows without any IDE.](https://github.com/pepipost/pepipost-sdk-php/blob/master/windows-installation-1.md)
 2. [Build SDK on Windows/Linux with IDE.](https://github.com/pepipost/pepipost-sdk-php/blob/master/windows-installation-2.md)
 3. [Build SDK on Linux.](https://github.com/pepipost/pepipost-sdk-php/blob/master/linux-installation.md)
 
