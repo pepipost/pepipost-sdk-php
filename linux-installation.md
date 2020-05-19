@@ -14,17 +14,21 @@ Below Steps will Guide you Step by Step, So that your installation is completed 
 
   1. Check PHP version (should be >= 5.4.0)
      
-     ```php -v```
+     ```bash
+     php -v
+     ```
      
-     ![phpinstall](http://app1.falconide.com/integration_imgs/linux/l1.png)
+     ![phpinstall](https://i.imgur.com/yc2Eftg.png)
       
       or you can install [PHP](http://php.net/manual/en/install.unix.debian.php) if it is not installed
     
   2. Check composer version 
   
-     ```composer --version```
+     ```bash
+     composer --version
+     ```
      
-     ![comp](http://app1.falconide.com/integration_imgs/linux/l1.1.png)
+     ![comp](https://i.imgur.com/NqjNRMz.png)
      
      or download [composer](https://getcomposer.org/download/) if composer is not installed
      
@@ -47,7 +51,7 @@ Below Steps will Guide you Step by Step, So that your installation is completed 
       
      ```git clone https://github.com/pepipost/pepipost-sdk-php.git test```
       
-     ![clone](http://app1.falconide.com/integration_imgs/linux/l3.png)
+     ![clone](https://i.imgur.com/aqtjgdh.png)
       
      **Zip method**
    
@@ -65,7 +69,7 @@ Below Steps will Guide you Step by Step, So that your installation is completed 
       
       ```composer install```
    
-      ![composerinstall](http://app1.falconide.com/integration_imgs/linux/l4.png)
+      ![composerinstall](https://i.imgur.com/3UZqRgY.png)
 
    7. Running Sample Code.
     
@@ -97,6 +101,8 @@ Below Steps will Guide you Step by Step, So that your installation is completed 
    
    This will give you result as follows
    
-   ```{"data":{},"message":"Success","error_info":null}```
+   ```json
+   
+   ```
     
     
