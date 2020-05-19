@@ -1,0 +1,32 @@
+{
+    "name": "apimatic/pepipost",
+    "type": "library",
+    "description": "Pepipost API is used to send the mail to the receipients specified in the docs",
+    "keywords": ["pepipost","API","SDK"],
+    "homepage": "https://apimatic.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "APIMatic SDK Generator",
+            "email": "helpdesk@pepipost.com",
+            "homepage": "https://apimatic.io",
+            "role": "API Tool"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "apimatic/unirest-php": "^2.0.0",
+        "apimatic/jsonmapper": "^1.3.1"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "PepipostLib\\": "src/"
+        }
+    }
+}
