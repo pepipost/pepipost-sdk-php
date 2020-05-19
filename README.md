@@ -134,7 +134,6 @@ $body->settings->footer = true;
 $body->settings->clickTrack = true;
 $body->settings->openTrack = true;
 $body->settings->unsubscribeTrack = true;
-$body->settings->bcc = array();
 
 try {
   $result = $sendController->createGenerateTheMailSendRequest($body);
