@@ -10,32 +10,32 @@ namespace PepipostLib\Models;
 use JsonSerializable;
 
 /**
- *Email address representing the sender of the mail
+ *To, CC  and Bcc email Address structure
  */
-class From implements JsonSerializable
+class EmailStruct implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
-     * @var string|null $email public property
-     */
-    public $email;
-
-    /**
-     * @todo Write general description for this property
+     * Name of recipient
      * @var string|null $name public property
      */
     public $name;
 
     /**
+     * Email of recipient
+     * @var string|null $email public property
+     */
+    public $email;
+
+    /**
      * Constructor to set initial or default values of member properties
-     * @param string $email Initialization value for $this->email
      * @param string $name  Initialization value for $this->name
+     * @param string $email Initialization value for $this->email
      */
     public function __construct()
     {
         if (2 == func_num_args()) {
-            $this->email = func_get_arg(0);
-            $this->name  = func_get_arg(1);
+            $this->name  = func_get_arg(0);
+            $this->email = func_get_arg(1);
         }
     }
 
@@ -46,8 +46,8 @@ class From implements JsonSerializable
     public function jsonSerialize()
     {
         $json = array();
-        $json['email'] = $this->email;
         $json['name']  = $this->name;
+        $json['email'] = $this->email;
 
         return $json;
     }
