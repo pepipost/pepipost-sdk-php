@@ -5,7 +5,7 @@ use PepipostLib\Models;
 use PepipostLib\Exceptions;
 
 
-$apiKey = '96c909c62bcc1dffacef747979ea8477';
+$apiKey = '4D51B3ECA2D4ED3A67E4E043B3F1A4D1';
 $client = new PepipostLib\PepipostClient($apiKey);
 
 
@@ -14,7 +14,7 @@ $body = new Models\Send;
 $body->replyTo = 'my-reply-to@mydomain.name';
 
 $body->from = new Models\From;
-$body->from->email = 'hello@snipperbytes.in';
+$body->from->email = 'hello@your-domain-registerd-with-pepipost';
 $body->from->name = 'Vikram';
 $body->templateId = 123;
 $body->subject = 'Pepipost Test Mail from SDK';
