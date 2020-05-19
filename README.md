@@ -70,9 +70,9 @@ Developers already familar with GIT, Composer and some of the other handy tools 
  
   ```composer install```
  
-6. Copy the code and paste in test.php from [simpleUsage.md](https://github.com/pepipost/pepipost-sdk-php/blob/master/simpleUsage.md) or [sampleExample](https://github.com/pepipost/pepipost-sdk-php#sample-code-for-testphp) .
+6. Copy the code and paste in test.php from [simple-usage.php](https://github.com/pepipost/pepipost-sdk-php/blob/master/simple-usage.php) or [sampleExample](https://github.com/pepipost/pepipost-sdk-php#sample-code-for-testphp) .
  
-  ```cp simpleUsage.md test.php```
+  ```cp simple-usage.md test.php```
   
 7. Get your API key and Sending Domain from your Pepipost account. 
   
@@ -103,7 +103,7 @@ require_once "vendor/autoload.php";
 use PepipostLib\Models;
 use PepipostLib\Exceptions;
 
-$apiKey = '96c909c62bcc1dffacef7dfdda34ea8477';
+$apiKey = '96c909c62bcc1dfdacef7dfdda34ea8477';
 
 $client = new PepipostLib\PepipostClient($apiKey);
 $sendController = $client->getSend();
