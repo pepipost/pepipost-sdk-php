@@ -7,7 +7,7 @@ use PepipostLib\Exceptions;
 $apiKey = '4D51B3ECA2D4ED3A67E4E043B3F1A4D1';
 $client = new PepipostLib\PepipostClient($apiKey);
 
-$mailSendController = $client->getMailSend();
+$mailSendController = $client->getSend();
 $body = new Models\Send;
 $body->from = new Models\From;
 
