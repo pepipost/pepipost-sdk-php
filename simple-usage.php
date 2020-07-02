@@ -18,7 +18,7 @@ $body->subject = 'Pepipost Test Mail from SDK';
 $body->content = array();
 $body->content[0] = new Models\Content;
 $body->content[0]->type = Models\TypeEnum::HTML;
-$body->content[0]->value = '<html><body>Hello, Welcome to Pepipost Family.<br>My name is [% name %].<br>my love is sending [% love %]</body> <br></html>';
+$body->content[0]->value = '<html><body>Hello, Welcome to Pepipost Family àèìòù.<br>My name is [% name %].<br>my love is sending [% love %]</body> <br></html>';
 
 $body->personalizations = array();
 $body->personalizations[0] = new Models\Personalizations;
@@ -44,7 +44,7 @@ $body->settings->footer = true;
 $body->settings->clickTrack = true;
 $body->settings->openTrack = true;
 $body->settings->unsubscribeTrack = true;
-
+$body->settings->hepf = false;
 
 try {
   $result = $mailSendController->createGeneratethemailsendrequest($body);
