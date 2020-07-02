@@ -113,7 +113,7 @@ class Send implements JsonSerializable
         if (12 == func_num_args()) {
             $this->replyTo          = func_get_arg(0);
             $this->from             = func_get_arg(1);
-            $this->subject          = func_get_arg(2);
+            $this->subject          = utf8_encode(func_get_arg(2));
             $this->templateId       = func_get_arg(3);
             $this->content          = func_get_arg(4);
             $this->attachments      = func_get_arg(5);
