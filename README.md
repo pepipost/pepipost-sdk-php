@@ -106,7 +106,7 @@ use PepipostLib\Exceptions;
 $apiKey = '96c909c62bcc1dfdacef7dfdda34ea8477';
 
 $client = new PepipostLib\PepipostClient($apiKey);
-$sendController = $client->getSend();
+$sendController = $client->getMailSend();
 
 $body = new Models\Send;
 $body->from = new Models\From;
@@ -167,7 +167,7 @@ For more information about the parameters, we would like to recommend our [API d
 <a name="announcements"></a>
 # Announcements
 
-v5.0.0 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-php/releases/tag/v5.0.0) for details.
+v5.1.0 has been released! Please see the [release notes](https://github.com/pepipost/pepipost-sdk-php/releases/tag/v5.1.0) for details.
 
 All updates to this library are documented in our [releases](https://github.com/pepipost/pepipost-sdk-php/releases). For any queries and feedbacks, feel free to reach out us at dx@pepipost.com
 
