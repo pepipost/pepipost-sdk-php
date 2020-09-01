@@ -14,6 +14,7 @@
 * [Get credit details of subaccount](#example13)
 * [Get Domain Status](#example14)
 * [Get Domain information](#example15)
+* [Get Credits for Account](#example16)
 
 <a name="example1"></a>
 ## fetch event logs 
@@ -438,6 +439,31 @@ $domain = 'gmail';
 
 try {
     $result = $domainGetDomainsController->getDomainStatusGET($domain);
+} catch (PepipostLib\APIException $e) {
+    echo 'Caught APIException: ',  $e->getMessage(), "\n"; 
+}
+```
+<a name="example16"></a>
+## Get credit information for account
+
+```php
+<?php
+
+require_once "vendor/autoload.php";
+
+use PepipostLib\Models;
+use PepipostLib\Exceptions;
+
+$apiKey = 'api_key';
+
+$client = new PepipostLib\PepipostClient($apiKey);
+
+$subaccountsGetcreditddetailsController = $client->getSubaccountsGetcreditddetails();
+
+$username = 'username0';
+
+try {
+    $result = $subaccountsGetcreditddetailsController->getcreditddetailsGET($username);
 } catch (PepipostLib\APIException $e) {
     echo 'Caught APIException: ',  $e->getMessage(), "\n"; 
 }
