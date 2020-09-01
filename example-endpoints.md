@@ -13,6 +13,7 @@
 * [Add credit in subaccount](#example12)
 * [Get credit details of subaccount](#example13)
 * [Get Domain Status](#example14)
+* [Get Domain information](#example15)
 
 <a name="example1"></a>
 ## fetch event logs 
@@ -377,17 +378,16 @@ require_once "vendor/autoload.php";
 use PepipostLib\Models;
 use PepipostLib\Exceptions;
 
-$apiKey = 'your api_key here';
+$apiKey = 'api_key';
 
 $client = new PepipostLib\PepipostClient($apiKey);
 
 $subaccountsGetSubAccountsController = $client->getSubaccountsGetSubAccounts();
 
-$limit = '4';
-$offset = '0';
+$username = '';
 
 try {
-    $result = $subaccountsGetSubAccountsController->getSubaccountsGetSubAccountsGET($limit, $offset);
+    $result = $subaccountsGetSubAccountsController->getSubaccountsGetSubAccountsGET($username);
 } catch (PepipostLib\APIException $e) {
     echo 'Caught APIException: ',  $e->getMessage(), "\n"; 
 }
