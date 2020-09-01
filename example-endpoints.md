@@ -5,13 +5,14 @@
 * [Domain delete](#example4)
 * [Suppression add](#example5)
 * [Suppression delete](#example6)
-* [create subaccount](#example7)
-* [update subaccount](#example8)
-* [enable/disable subaccount](#example9)
-* [delete subaccount](#example10)
-* [set recurring credit in subaccount](#example11)
-* [add credit in subaccount](#example12)
-* [get credit details of subaccount](#example13)
+* [Create subaccount](#example7)
+* [Update subaccount](#example8)
+* [Enable/Disable subaccount](#example9)
+* [Delete subaccount](#example10)
+* [Set recurring credit in subaccount](#example11)
+* [Add credit in subaccount](#example12)
+* [Get credit details of subaccount](#example13)
+* [Get Domain Status](#example14)
 
 <a name="example1"></a>
 ## fetch event logs 
@@ -387,6 +388,56 @@ $offset = '0';
 
 try {
     $result = $subaccountsGetSubAccountsController->getSubaccountsGetSubAccountsGET($limit, $offset);
+} catch (PepipostLib\APIException $e) {
+    echo 'Caught APIException: ',  $e->getMessage(), "\n"; 
+}
+```
+
+<a name="example14"></a>
+## Get Status of Domain
+
+```php
+<?php
+
+require_once "vendor/autoload.php";
+
+use PepipostLib\Models;
+use PepipostLib\Exceptions;
+
+$apiKey = 'api_key';
+
+$client = new PepipostLib\PepipostClient($apiKey);
+
+$domainGetDomainsController = $client->getDomainGetDomains();
+
+$status = '1';
+
+try {
+    $result = $domainGetDomainsController->getDomainStatusGET($status);
+} catch (PepipostLib\APIException $e) {
+    echo 'Caught APIException: ',  $e->getMessage(), "\n"; 
+}
+```
+
+<a name="example15"></a>
+## Get Infomation for Domains
+
+```php
+<?php
+
+require_once "vendor/autoload.php";
+
+use PepipostLib\Models;
+use PepipostLib\Exceptions;
+
+$apiKey = 'api_key';
+$client = new PepipostLib\PepipostClient($apiKey);
+$domainGetDomainsController = $client->getDomainGetDomains();
+
+$domain = 'gmail';
+
+try {
+    $result = $domainGetDomainsController->getDomainStatusGET($domain);
 } catch (PepipostLib\APIException $e) {
     echo 'Caught APIException: ',  $e->getMessage(), "\n"; 
 }
