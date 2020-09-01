@@ -15,7 +15,7 @@ use JsonSerializable;
 class Content implements JsonSerializable
 {
     /**
-     * content in text/plain format
+     * @todo Write general description for this property
      * @var string|null $type public property
      */
     public $type;
@@ -47,7 +47,7 @@ class Content implements JsonSerializable
     {
         $json = array();
         $json['type']  = $this->type;
-        $json['value'] = utf8_encode($this->value);
+        $json['value'] = $this->value;
 
         return $json;
     }

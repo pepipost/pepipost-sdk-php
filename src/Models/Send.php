@@ -22,7 +22,7 @@ class Send implements JsonSerializable
     public $replyTo;
 
     /**
-     * email address representing the sender of the mail
+     * Email address representing the sender of the mail
      * @required
      * @var \PepipostLib\Models\From $from public property
      */
@@ -63,7 +63,7 @@ class Send implements JsonSerializable
     public $personalizations;
 
     /**
-     * Enable/Disable settings like click, open and unsubscribe track
+     * @todo Write general description for this property
      * @var \PepipostLib\Models\Settings|null $settings public property
      */
     public $settings;
@@ -113,7 +113,7 @@ class Send implements JsonSerializable
         if (12 == func_num_args()) {
             $this->replyTo          = func_get_arg(0);
             $this->from             = func_get_arg(1);
-            $this->subject          = utf8_encode(func_get_arg(2));
+            $this->subject          = func_get_arg(2);
             $this->templateId       = func_get_arg(3);
             $this->content          = func_get_arg(4);
             $this->attachments      = func_get_arg(5);
