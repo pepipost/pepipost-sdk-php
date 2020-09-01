@@ -23,11 +23,115 @@ class PepipostClient
         Configuration::$apiKey = $apiKey ? $apiKey : Configuration::$apiKey;
     }
     /**
-     * Singleton access to Send controller
-     * @return Controllers\SendController The *Singleton* instance
+     * Singleton access to MailSend controller
+     * @return Controllers\MailSendController The *Singleton* instance
      */
-    public function getSend()
+    public function getMailSend()
     {
-        return Controllers\SendController::getInstance();
+        return Controllers\MailSendController::getInstance();
+    }
+    /**
+     * Singleton access to Events controller
+     * @return Controllers\EventsController The *Singleton* instance
+     */
+    public function getEvents()
+    {
+        return Controllers\EventsController::getInstance();
+    }
+    /**
+     * Singleton access to Stats controller
+     * @return Controllers\StatsController The *Singleton* instance
+     */
+    public function getStats()
+    {
+        return Controllers\StatsController::getInstance();
+    }
+    /**
+     * Singleton access to Subaccounts controller
+     * @return Controllers\SubaccountsController The *Singleton* instance
+     */
+    public function getSubaccounts()
+    {
+        return Controllers\SubaccountsController::getInstance();
+    }
+    /**
+     * Singleton access to SubaccountsDelete controller
+     * @return Controllers\SubaccountsDeleteController The *Singleton* instance
+     */
+    public function getSubaccountsDelete()
+    {
+        return Controllers\SubaccountsDeleteController::getInstance();
+    }
+    /**
+     * Singleton access to SubaccountsGetSubAccounts controller
+     * @return Controllers\SubaccountsGetSubAccountsController The *Singleton* instance
+     */
+    public function getSubaccountsGetSubAccounts()
+    {
+        return Controllers\SubaccountsGetSubAccountsController::getInstance();
+    }
+    /**
+     * Singleton access to Setrecurringcreditddetails controller
+     * @return Controllers\SetrecurringcreditddetailsController The *Singleton* instance
+     */
+    public function getSetrecurringcreditddetails()
+    {
+        return Controllers\SetrecurringcreditddetailsController::getInstance();
+    }
+    /**
+     * Singleton access to SubaccountsSetsubaccountcredit controller
+     * @return Controllers\SubaccountsSetsubaccountcreditController The *Singleton* instance
+     */
+    public function getSubaccountsSetsubaccountcredit()
+    {
+        return Controllers\SubaccountsSetsubaccountcreditController::getInstance();
+    }
+    /**
+     * Singleton access to SubaccountsUpdateSubaccount controller
+     * @return Controllers\SubaccountsUpdateSubaccountController The *Singleton* instance
+     */
+    public function getSubaccountsUpdateSubaccount()
+    {
+        return Controllers\SubaccountsUpdateSubaccountController::getInstance();
+    }
+    /**
+     * Singleton access to SubaccountsCreateSubaccount controller
+     * @return Controllers\SubaccountsCreateSubaccountController The *Singleton* instance
+     */
+    public function getSubaccountsCreateSubaccount()
+    {
+        return Controllers\SubaccountsCreateSubaccountController::getInstance();
+    }
+    /**
+     * Singleton access to Suppression controller
+     * @return Controllers\SuppressionController The *Singleton* instance
+     */
+    public function getSuppression()
+    {
+        return Controllers\SuppressionController::getInstance();
+    }
+    /**
+     * Singleton access to DomainDelete controller
+     * @return Controllers\DomainDeleteController The *Singleton* instance
+     */
+    public function getDomainDelete()
+    {
+        return Controllers\DomainDeleteController::getInstance();
+    }
+    /**
+     * Singleton access to DomainStatus controller
+     * @return Controllers\DomainStatusController The *Singleton* instance
+     */
+    public function getDomainStatus()
+    {
+        return Controllers\DomainStatusController::getInstance();
+    }
+    /**
+     * Singleton access to Domain controller
+     * @return Controllers\DomainController The *Singleton* instance
+     */
+    public function getDomain()
+    {
+        return Controllers\DomainController::getInstance();
     }
 }
